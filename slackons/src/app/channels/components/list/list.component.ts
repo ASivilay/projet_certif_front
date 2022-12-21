@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { ChannelService } from '../../services/channels.services.service';
 
-const url = "http://localhost:3000/channels";
+const url = "http://localhost:8080/api/canalgeneral/listecanaux";
 
 @Component({
   selector: 'app-list-channels',

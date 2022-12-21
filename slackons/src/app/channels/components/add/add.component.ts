@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ChannelService } from '../../services/channels.services.service';
 
-const url = "http://localhost:3000/channels";
+const url = "http://localhost:8080/api/canalgeneral/listecanaux/post";
 
 @Component({
   selector: 'app-add',
