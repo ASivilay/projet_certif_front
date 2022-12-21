@@ -4,15 +4,17 @@ import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
 
 const routes: Routes = [{
+
+  
   path: 'channels/:id',
   children: [
   
       // list messages per channel
-    {
+  /*  {
     path: '',
     component: ListComponent
     },
-  
+  */
     // add a message into the specified channel
     {
     path: 'add',
@@ -20,6 +22,7 @@ const routes: Routes = [{
     },
   
   ]
+
   },
   
   
