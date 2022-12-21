@@ -8,6 +8,7 @@ import { DeleteComponent } from './components/delete/delete.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { ShowComponent } from './show/show.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppRoutingModule } from '../app-routing.module';
     ListComponent,
     AddComponent,
     DeleteComponent,
-    EditComponent
+    EditComponent,
+    ShowComponent
       ],
   imports: [
     CommonModule,

@@ -1,3 +1,5 @@
+<a routerLink="/channels/add">Créer un canal</a>
+
 <h2>Liste des canaux</h2>
 
 <ul *ngIf="channels.length; else noChannelMessage">
@@ -5,8 +7,6 @@
         <a [routerLink]="['/channels', channel.id]">{{ channel.name }}</a>
     </li>
 </ul>
-
-
 
 <ng-template #noChannelMessage>
     <div>Aucun canal en BDD</div>

@@ -1,4 +1,13 @@
-<p>add works!</p>
+<h2>Creer un nouveau canal</h2>
 
+<div>
+    <label for="">Nom du canal</label>
+    <input 
+        type="text"
+        class="form-control"
+        id="name"
+        [formControl]="form.controls.name">
+</div>
 
-<router-outlet></router-outlet>
+<button type="button" (click)="submitBook()">Créer le canal</button>
+
