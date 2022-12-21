@@ -4,7 +4,6 @@ import { ChannelService } from '../../services/channels.services.service';
 
 const url = "http://localhost:8080/api/canalgeneral/listecanaux/trouver"
 
-
 @Component({
   selector: 'app-show',
   templateUrl: './show.component.html',

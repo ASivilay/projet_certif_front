@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
@@ -11,7 +11,7 @@ const url = "http://localhost:8080/api/canalgeneral/listecanaux";
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent {
+export class ListComponent implements OnInit{
  // imgchannel:any = "C:/Users/marin/OneDrive/Documents/TPJAVA/slackons-devperso-images/channelexemple.png";
 
   //page title
