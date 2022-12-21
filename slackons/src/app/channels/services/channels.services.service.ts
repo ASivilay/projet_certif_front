@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,6 @@ export class ChannelService {
 
    public getChannelsFromDatabase(url: string): void
    {
-     // this.httpClient.get(url).subscribe(response => this._books = response)
      this.httpClient.get(url).subscribe(response => this._channels.next(response));
    }
  
@@ -30,9 +30,12 @@ export class ChannelService {
 
    public getChannel(url: string, id: number)
    {
-     url = `${url}${ "?id=" + id}`;
+     //url = `${url}${ "?id=" + id}`;
+     url = `${url}?id=${id}`;
      this.httpClient.get(url).subscribe(response => this._channel.next(response))
-   }
+ 
+     //this.httpClient.get(url).subscribe(response => console.log(response))
+    }
 
    public get channel()
    {
