@@ -1,0 +1,26 @@
+{
+  
+    "messages": [
+      {
+        "user": {
+            "id": 7,
+            "username": "tata"
+        },
+        "content": "coucou ter tous",
+        "datetime": "2022-12-13T14:35:16.000+00:00",
+        "channel": {
+            "id": 4,
+            "name": "général"
+        }
+      }
+    ],
+
+
+    "channels": [
+    {
+        "id": 1,
+        "name": "m2isign",
+        "modification": true
+    }
+    ]
+}

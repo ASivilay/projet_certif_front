@@ -1,0 +1,22 @@
+<p>list of channels works!</p>
+
+<h1 class='center'>Channels</h1>
+<div class='container'>
+<div class="row">
+<div *ngFor='let channel of channels' class="col s6 m4">
+  <!--<div class="card horizontal" (click)="selectChannel(channel)"> DONT FORGET REPLACE THE /DIV AT FINAL-->
+    <div class="card-image">
+    <img [src]="imgchannel", alt=""> 
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>{{ channel.name }}</p>
+        <p><small>{{ channel.created }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<router-outlet></router-outlet>
