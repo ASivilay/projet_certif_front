@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { ChannelService } from '../../services/channels.services.service';
 
-const url = "http://localhost:3000/channels";
+const url = "http://localhost:8080/api/canalgeneral/listecanaux";
 
 @Component({
   selector: 'app-list-channels',
@@ -18,22 +18,20 @@ export class ListComponent {
   public pageTitle:string = "Channels";
 
   // definition of the list
-  private _channels = new BehaviorSubject<any>({});
   public channels: any = [];
 
    constructor(
     //private bookService: BookService,
-    private httpClient: HttpClient,
+    // private httpClient: HttpClient,
     private channelService: ChannelService
    ){}
 
-   /*
+   
   ngOnInit(): void
   {
-    this.httpClient
+    //this.httpClient
     this.channelService.getChannelsFromDatabase(url);
     this.channelService.channels.subscribe(data => this.channels = data);
   }
-*/
 
 }

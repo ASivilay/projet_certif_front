@@ -13,8 +13,8 @@ import { UsersModule } from './users/users.module';
   ],
   imports: [
     BrowserModule,
-    MessagesModule,
     ChannelsModule,
+    MessagesModule,
     UsersModule,
     AppRoutingModule
   ],
