@@ -5,9 +5,7 @@
 <div class="row">
 <div *ngFor='let channel of channels' class="col s6 m4">
   <!--<div class="card horizontal" (click)="selectChannel(channel)"> DONT FORGET REPLACE THE /DIV AT FINAL-->
-    <div class="card-image">
-    <img [src]="imgchannel", alt=""> 
-    </div>
+    
     <div class="card-stacked">
       <div class="card-content">
         <p>{{ channel.name }}</p>

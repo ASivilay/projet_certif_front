@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
@@ -12,7 +12,7 @@ const url = "http://localhost:3000/channels";
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  imgchannel:any = "C:/Users/marin/OneDrive/Documents/TPJAVA/slackons-devperso-images/channelexemple.png";
+ // imgchannel:any = "C:/Users/marin/OneDrive/Documents/TPJAVA/slackons-devperso-images/channelexemple.png";
 
   //page title
   public pageTitle:string = "Channels";
