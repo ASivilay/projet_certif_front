@@ -1,13 +1,33 @@
 <h2>{{ channel?.name }}</h2>
 
-<p>test</p>
+<hr>
 
-<div>Messages:<br>
-    {{ channel?.message }}
-</div>
+<h2>Discussion</h2>
 
-<div>Utilisateurs:<br>
-    {{ channel?.user }}
-</div>
+<ul *ngIf="channel.messages.length; else noChannelMessage">
+    <li *ngFor="let message of channel.messages; let i = index">
+        {{ message.content }}
+    </li>
+</ul>
+
+<ng-template #noChannelMessage>
+    <div>Aucun message sur ce canal</div>
+</ng-template>
+
+<hr>
+
+<h2>Utilisateurs</h2>
+
+<ul *ngIf="channel.users.length; else noChannelUser">
+    <li *ngFor="let user of channel.users; let i = index">
+        {{ user.username }}
+    </li>
+</ul>
+
+<ng-template #noChannelUser>
+    <div>Aucun utilisateur sur ce canal</div>
+</ng-template>
+
+
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +38,19 @@ export class ChannelService {
    {
      return this._channel;
    }
+
+   public createChannel(url: string, channel: any)
+   {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    const options = {
+      headers
+    };
+
+    this.httpClient.post(url, channel, options).subscribe(response => this._channel.next(response))
+
+   }
+
 }
