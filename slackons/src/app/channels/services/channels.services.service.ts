@@ -30,10 +30,10 @@ export class ChannelService {
 
    public getChannel(url: string, id: number)
    {
-     url = `${url}/${id}`;
+     url = `${url}${ "?id=" + id}`;
      this.httpClient.get(url).subscribe(response => this._channel.next(response))
    }
- 
+
    public get channel()
    {
      return this._channel;
