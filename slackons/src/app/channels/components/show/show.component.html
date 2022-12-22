@@ -1,32 +1,54 @@
-<h2>{{ channel?.name }}</h2>
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <section class="channelcontent">
+            <h2>{{ channel?.name }}</h2>
+            <hr>
+            <ul *ngIf="channel.messages.length; else noChannelMessage">
+                <blockquote *ngFor="let message of channel.messages; let i = index">
+                    {{ message.content }}
+                </blockquote>
+            </ul>
+            <ng-template #noChannelMessage>
+                <div>Aucun message sur ce canal</div>
+            </ng-template>
+        </section>
+        <hr>
 
-<hr>
 
-<h2>Discussion</h2>
+        <section class="usersnavbar">
+            <h2>Users</h2>
+            <ul *ngIf="channel.users.length; else noChannelUser">
+                <p *ngFor="let user of channel.users; let i = index">
+                    {{ user.username }}
+                </p>
+            </ul>
+            <ng-template #noChannelUser>
+                <div>Aucun utilisateur sur ce canal</div>
+            </ng-template>
+        </section>
+    </body>
+</html>
 
-<ul *ngIf="channel.messages.length; else noChannelMessage">
-    <li *ngFor="let message of channel.messages; let i = index">
-        {{ message.content }}
-    </li>
-</ul>
 
-<ng-template #noChannelMessage>
-    <div>Aucun message sur ce canal</div>
-</ng-template>
 
-<hr>
 
-<h2>Utilisateurs</h2>
 
-<ul *ngIf="channel.users.length; else noChannelUser">
-    <li *ngFor="let user of channel.users; let i = index">
-        {{ user.username }}
-    </li>
-</ul>
 
-<ng-template #noChannelUser>
-    <div>Aucun utilisateur sur ce canal</div>
-</ng-template>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

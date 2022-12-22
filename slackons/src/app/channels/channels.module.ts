@@ -26,6 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms'
     HttpClientModule,
     ReactiveFormsModule,
     ChannelsRoutingModule
+  ],
+  exports: [
+    ListComponent,
+    AddComponent,
   ]
 })
 export class ChannelsModule { }
