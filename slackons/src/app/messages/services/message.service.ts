@@ -52,9 +52,9 @@ export class MessageService {
     };
 
     message.channel = {};
-    message.user = {};
+    //message.user = {};
     message.channel.id = id;
-    message.user.id = id; 
+    //message.user.id = id; 
 
      /* 
     if(this.userService.UserExists(message.username) == true){
