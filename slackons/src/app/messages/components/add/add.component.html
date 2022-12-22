@@ -4,13 +4,13 @@
 <div>
 
     <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-
+        <!--
         <label for="username">Username: </label>
         <input id="username" type="text"  formControlName="username">
-        <br>
+        <br>-->
         <label for="content">Message: </label>
         <input id="content" type="text"  formControlName="content">
-      
+
         <br>
         <button type="button" (click)="submitMessage()">Poster</button>
     </form>
