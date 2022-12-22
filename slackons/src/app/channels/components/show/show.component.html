@@ -9,7 +9,11 @@
             <hr>
             <ul *ngIf="channel.messages.length; else noChannelMessage">
                 <blockquote *ngFor="let message of channel.messages; let i = index">
+                    <!--<div class="username">{{ message.user.username}}</div>
+                    <div class="messagedate">{{ message.datetime}}</div>-->
+                    <code>{{ message.content}}</code>
                     {{ message.content }}
+                    <!--<p class="messagecontent">{{ message.content }} </p>-->                        
                 </blockquote>
             </ul>
             <ng-template #noChannelMessage>
