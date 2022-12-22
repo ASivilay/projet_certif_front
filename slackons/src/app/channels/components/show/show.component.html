@@ -6,7 +6,7 @@
 
 <ul *ngIf="channel.messages.length; else noChannelMessage">
     <li *ngFor="let message of channel.messages; let i = index">
-        {{ message.content }}
+        {{ message.content }} -- de {{ message.user.username}}
     </li>
 </ul>
 
