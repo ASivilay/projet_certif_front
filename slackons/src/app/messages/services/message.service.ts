@@ -39,7 +39,7 @@ export class MessageService {
      return this._message;
    }
 
-   public createMessage(url: string, message: any)
+   public createMessage(url: string, message: any, id: any)
    {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -49,7 +49,18 @@ export class MessageService {
       headers
     };
 
+    message.channel = {};
+    message.user = {};
+    message.channel.id = id;
+    message.user.id = 6;
     this.httpClient.post(url, message, options).subscribe(response => this._message.next(response))
+
+    console.log(message)
+
+
+
+
+
     /*
     if (HttpStatusCode.Created) {
 
@@ -59,7 +70,7 @@ export class MessageService {
 
       this.result = 1; 
   */
- 
+
   }
 }
 
