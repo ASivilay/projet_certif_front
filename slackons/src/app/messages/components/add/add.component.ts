@@ -1,7 +1,7 @@
 import { HttpStatusCode } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ChannelService } from 'src/app/channels/services/channels.services.service';
 import { MessageService } from '../../services/message.service';
 
@@ -36,18 +36,29 @@ export class AddComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ){}
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
 
+  redirectTo(uri:string){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate([uri]));
+  }
+  //settimeout
+
   public submitMessage(): void
   {
     this.messageService.createMessage(url, this.messageForm.value, this.id)
+    this.redirectTo('/channels/'+ this.id)
 
   }
+
+
+
 
 
 }
