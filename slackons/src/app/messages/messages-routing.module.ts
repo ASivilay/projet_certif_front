@@ -4,7 +4,6 @@ import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
 
 const routes: Routes = [{
-
   
   path: 'channels/:id',
   children: [
@@ -23,8 +22,7 @@ const routes: Routes = [{
   
   ]
 
-  },
-  
+  },  
   
   ];
 @NgModule({
