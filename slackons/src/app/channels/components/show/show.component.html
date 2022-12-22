@@ -5,13 +5,13 @@
     </head>
     <body>
         <section class="channelcontent">
-            <h2>{{ channel?.name }}</h2>
-            <hr>
+            <h2>#{{ channel?.name }}</h2>
+            <br/>
             <ul *ngIf="channel.messages.length; else noChannelMessage">
                 <blockquote *ngFor="let message of channel.messages; let i = index">
-                    <!--<div class="username">{{ message.user.username}}</div>
-                    <div class="messagedate">{{ message.datetime}}</div>-->
-                    <code>{{ message.content}}</code>
+                    <div class="username">{{ message.user.username}}</div>
+                    <div class="messagedate">à {{ message.datetime}}</div>
+                    <!--<code>{{ message.content}}</code>-->
                     {{ message.content }}
                     <!--<p class="messagecontent">{{ message.content }} </p>-->                        
                 </blockquote>
@@ -20,7 +20,7 @@
                 <div>Aucun message sur ce canal</div>
             </ng-template>
         </section>
-        <hr>
+        <br/>
 
 
         <section class="usersnavbar">
