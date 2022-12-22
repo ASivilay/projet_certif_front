@@ -26,8 +26,11 @@ import { MessagesModule } from '../messages/messages.module';
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ChannelsRoutingModule,
-    MessagesModule,
+    ChannelsRoutingModule
+  ],
+  exports: [
+    ListComponent,
+    AddComponent,
   ]
 })
 export class ChannelsModule { }
