@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './components/add/add.component';
+import { DeleteComponent } from './components/delete/delete.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
 import { ShowComponent } from './components/show/show.component';
@@ -39,6 +40,11 @@ children: [
         component: EditComponent
       },
 
+      //delete a channel
+      {
+        path:'delete',
+        component: DeleteComponent      
+      }
     ]
   },
 

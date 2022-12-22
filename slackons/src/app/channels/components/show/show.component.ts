@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChannelService } from '../../services/channels.services.service';
 
-const url = "http://localhost:8080/api/canalgeneral/listecanaux/trouver"
+const url = "http://localhost:8080/api/canalgeneral/listecanaux/trouver";
 
 @Component({
   selector: 'app-show',
