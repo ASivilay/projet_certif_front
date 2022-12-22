@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from "rxjs";
+import { MessageService } from 'src/app/messages/services/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,7 @@ export class ChannelService {
 
   constructor(
     private httpClient: HttpClient
-  ) {
-    
-   }
+  ) {}
 
    public getChannelsFromDatabase(url: string): void
    {

@@ -23,7 +23,7 @@ export class ListComponent implements OnInit{
    constructor(
     //private bookService: BookService,
     // private httpClient: HttpClient,
-    private channelService: ChannelService
+   private channelService: ChannelService
    ){}
 
    

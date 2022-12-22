@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChannelService } from '../../services/channels.services.service';
 
@@ -24,5 +24,7 @@ export class ShowComponent implements OnInit {
     this.channelService.getChannel(url, this.id);
     this.channelService.channel.subscribe(data => this.channel = data);
   }
+
+ 
 
 }
