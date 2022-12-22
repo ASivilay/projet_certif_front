@@ -58,8 +58,6 @@ export class ChannelService {
    public editChannel(url: string, id: number|undefined, channel: any): void
    {
 
-    url = `${url}?id=${id}`;
-
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
@@ -68,6 +66,10 @@ export class ChannelService {
       headers
     };
 
+    channel.id = id;
+
+    console.log(url, channel);
+    
     this.httpClient.patch(url, channel, options).subscribe(response => console.log(response))
 
    }

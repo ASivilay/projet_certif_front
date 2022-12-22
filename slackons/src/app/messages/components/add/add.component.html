@@ -9,17 +9,14 @@
         <input id="username" type="text"  formControlName="username">
         <br>
         <label for="content">Message: </label>
-        <input id="content" type="text"  formControlName="content">
+        <input id="content" type="textarea"  formControlName="content">
 
         <br>
         <button type="button" (click)="submitMessage()">Poster</button>
     </form>
 </div>
 
-<div class="alert alert-danger" *ngIf="messageForm.errors?.['minlength']" else MessageSuccess>
-    Name must be at least 4 characters long.
-</div>
-
-<div class="alert alert-success"  *ngIf id="MessageSuccess">
-    <strong>Success!</strong> Register successful .
+<div class="alert alert-danger" *ngIf="messageForm.errors?.['minlength']">
+    L'username doit contenir au minimum 4 caractères, au maximum 30.
+    Le contenu ne doit pas être vide!
 </div>

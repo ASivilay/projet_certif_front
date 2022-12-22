@@ -23,6 +23,8 @@ export class ShowComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.channelService.getChannel(url, this.id);
     this.channelService.channel.subscribe(data => this.channel = data);
+
   }
 
+ 
 }
