@@ -10,7 +10,8 @@ import { EditComponent } from './components/edit/edit.component';
 import { ShowComponent } from './components/show/show.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms'
-import { MessagesModule } from '../messages/messages.module'; 
+//import { AddComponent as AddComponentMessage } from '../messages/components/add/add.component';
+import { MessagesModule } from '../messages/messages.module';
 
 
 
@@ -20,10 +21,12 @@ import { MessagesModule } from '../messages/messages.module';
     AddComponent,
     DeleteComponent,
     EditComponent,
-    ShowComponent
+    ShowComponent,
+    //AddComponentMessage,
   ],
   imports: [
     CommonModule,
+    MessagesModule,
     HttpClientModule,
     ReactiveFormsModule,
     ChannelsRoutingModule

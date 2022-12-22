@@ -63,17 +63,7 @@ export class MessageService {
     }*/
 
     this.httpClient.post(url, message, options).subscribe(response => this._message.next(response))
-
-    /*
-    if (HttpStatusCode.Created) {
-
-      this.result = 2;
-
-    } else
-
-      this.result = 1; 
-  */
-    console.log(message)
+    //console.log(message)
   }
   
 }
