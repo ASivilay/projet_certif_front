@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpStatusCode } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { UserService } from 'src/app/users/services/user.service';
 
 
 @Injectable({
@@ -10,11 +9,9 @@ import { UserService } from 'src/app/users/services/user.service';
 export class MessageService {
    private _messages = new BehaviorSubject<any>({});
    private _message = new BehaviorSubject<any>({});
-   result:number =0;
 
    constructor(
     private httpClient: HttpClient,
-    private userService: UserService
    ) {}
 
    public getMessagesFromDatabase(url: string): void
@@ -27,13 +24,11 @@ export class MessageService {
      return this._messages;
    }
 
+   // transformer l' ?id= de JAVA pour l'adapter à l'Angular
    public getMessage(url: string, id: number)
    {
-     //url = `${url}${ "?id=" + id}`;
      url = `${url}?id=${id}`;
      this.httpClient.get(url).subscribe(response => this._message.next(response))
- 
-     //this.httpClient.get(url).subscribe(response => console.log(response))
     }
 
    public get message()
@@ -51,16 +46,18 @@ export class MessageService {
       headers
     };
 
+    //bourrin à rectifier: écrire en plus propre si temps
     message.channel = {};
-    //message.user = {};
     message.channel.id = id;
-    //message.user.id = id; 
+    
 
      /* 
-    if(this.userService.UserExists(message.username) == true){
+     message.user = {};
+     message.user.id = id; 
+     if(this.userService.UserExists(message.username) == true){
       this.userService.getUserByName(username)
-      return this.userService.getUser(data => this.user = data)
-    }*/
+      return this.userService.getUser(data => this.user = data)}
+    */
 
     this.httpClient.post(url, message, options).subscribe(response => this._message.next(response))
     //console.log(message)
