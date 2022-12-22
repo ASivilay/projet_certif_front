@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MessagesModule } from './messages/messages.module';
 import { ChannelsModule } from './channels/channels.module';
 import { UsersModule } from './users/users.module';
+import { NotfoundModule } from './notfound/notfound.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UsersModule } from './users/users.module';
     ChannelsModule,
     MessagesModule,
     UsersModule,
+    NotfoundModule,
     AppRoutingModule
   ],
   providers: [],
