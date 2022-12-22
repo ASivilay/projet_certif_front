@@ -2,7 +2,7 @@ import { HttpStatusCode } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChannelService } from 'src/app/channels/services/channels.services.service';
+import { ValidatorFn } from '@angular/forms';
 import { MessageService } from '../../services/message.service';
 
 const url = "http://localhost:8080/api/message/listemessages/post";
@@ -20,18 +20,18 @@ export class AddComponent implements OnInit {
       username: new FormControl('',[
       Validators.required,
       Validators.minLength(4),
-      Validators.maxLength(30),
+      Validators.maxLength(30),   
     ]) ,
+    
       content: new FormControl('' ,[
       Validators.required,
-      Validators.minLength(1)
+      Validators.minLength(1),
       ]),
-     datetime: new FormControl(new Date)
+     datetime: new FormControl(new Date)   
   });
 
   onSubmit() {
-    console.warn(this.messageForm.value);
-    
+    console.warn(this.messageForm.value)
   }
 
   constructor(
@@ -48,7 +48,6 @@ export class AddComponent implements OnInit {
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
     this.router.navigate([uri]));
   }
-  //settimeout
 
   public submitMessage(): void
   {
@@ -56,7 +55,6 @@ export class AddComponent implements OnInit {
     this.redirectTo('/channels/'+ this.id)
 
   }
-
 
 
 
