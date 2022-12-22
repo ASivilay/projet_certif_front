@@ -9,7 +9,7 @@
             <br/>
             <ul *ngIf="channel.messages.length; else noChannelMessage">
                 <blockquote *ngFor="let message of channel.messages; let i = index">
-                    <div class="username">{{ message.user.username}}</div>
+                    <div class="username">{{ message.username}}</div>
                     <div class="messagedate">à {{ message.datetime | date :'HH:mm' }} le {{ message.datetime | date : 'd MMM YYYY' }}</div>
                     <!--<code>{{ message.content}}</code>-->
                     {{ message.content }}
