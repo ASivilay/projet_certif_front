@@ -25,6 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms'
     HttpClientModule,
     ReactiveFormsModule,
     MessagesRoutingModule,
-  ]
+      ],
+    exports: [
+    AddComponent,
+      ]
 })
 export class MessagesModule { }
