@@ -1,12 +1,23 @@
-<h2>Creer un nouveau canal</h2>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://discordcss.blobby.me">
 
-<div>
-    <label for="">Nom du canal</label>
-    <input 
-        type="text"
-        class="form-control"
-        id="name"
-        [formControl]="form.controls.name">
-</div>
+    </head>
+    <body>
+        <h2>Creer un nouveau canal</h2>
 
-<button type="button" (click)="submitBook()">Créer le canal</button>
+        <div>
+            <label for="">Nom du canal</label>
+            <input 
+                type="text"
+                class="form-control"
+                id="name"
+                [formControl]="form.controls.name">
+        </div>
+        
+        <button type="button" (click)="submitBook()">Créer le canal</button>
+        
+        <router-outlet></router-outlet>
+    </body>
+</html>

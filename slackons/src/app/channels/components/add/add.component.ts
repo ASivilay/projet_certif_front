@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ChannelService } from '../../services/channels.services.service';
 
 const url = "http://localhost:8080/api/canalgeneral/listecanaux/post";
@@ -16,12 +17,14 @@ export class AddComponent {
   });
 
   constructor(
-    private channelService: ChannelService
+    private channelService: ChannelService,
+    private router: Router
   ){}
 
   public submitBook(): void
   {
-    this.channelService.createChannel(url, this.form.value)
+    this.channelService.createChannel(url, this.form.value);
+    this.router.navigate(['/channels']);
   }
 
 }

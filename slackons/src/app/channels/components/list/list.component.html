@@ -1,18 +1,34 @@
-<a routerLink="/channels/add">Créer un canal</a>
+<!DOCTYPE html>
+<html>
+  <head>
 
-<h2>Liste des canaux</h2>
+  </head>
+    <body>
+        <section class="channelsnavbar">
+            <h2>Channels</h2>
+        
+            <div class="channelsidebar">
+                <ul *ngIf="channels.length; else noChannelMessage">
+                    <p *ngFor="let channel of channels; let i = index">
+                        <a [routerLink]="['/channels', channel.id]">#{{ channel.name }}</a>
+                    </p>
+                </ul>
+            </div>
+        
+        
+            <ng-template #noChannelMessage>
+                <div>Aucun canal en BDD</div>
+            </ng-template>
 
-<ul *ngIf="channels.length; else noChannelMessage">
-    <li *ngFor="let channel of channels; let i = index">
-        <a [routerLink]="['/channels', channel.id]">{{ channel.name }}</a>
-    </li>
-</ul>
 
-<ng-template #noChannelMessage>
-    <div>Aucun canal en BDD</div>
-</ng-template>
+            <a routerLink="/channels/add">Ajouter un canal</a>
+        </section>
+        <hr>
 
-<hr>
+    
+    </body>
+
+</html>
 
 
 

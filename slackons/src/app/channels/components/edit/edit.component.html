@@ -1,0 +1,16 @@
+<h2>Modifier le canal</h2>
+
+<form [formGroup]="form" novalidate>
+
+<div class="form-group">
+    <label for="">Nouveau nom du canal</label>
+    <input 
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name">
+</div>
+
+<button type="button" (click)="submitChannel()">Modifier le canal</button>
+
+</form>
