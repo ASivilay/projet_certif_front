@@ -5,7 +5,8 @@
     </head>
     <body>
         <section class="channelcontent">
-            <h2>#{{ channel?.name }}</h2>
+            <h2>#{{ channel?.name }}</h2> 
+            
             <br/>
             <ul *ngIf="channel.messages.length; else noChannelMessage">
                 <blockquote *ngFor="let message of channel.messages; let i = index">
@@ -23,7 +24,7 @@
         <br/>
 
 
-        <section class="usersnavbar">
+        <!-- <section class="usersnavbar">
             <h2>Users</h2>
             <ul *ngIf="channel.users.length; else noChannelUser">
                 <p *ngFor="let user of channel.users; let i = index">
@@ -33,7 +34,8 @@
             <ng-template #noChannelUser>
                 <div>Aucun utilisateur sur ce canal</div>
             </ng-template>
-        </section>
+        </section> -->
+        
     </body>
 </html>
 
