@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpStatusCode } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { UserService } from 'src/app/users/services/user.service';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ export class MessageService {
    result:number =0;
 
    constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private userService: UserService
    ) {}
 
    public getMessagesFromDatabase(url: string): void
@@ -52,14 +54,15 @@ export class MessageService {
     message.channel = {};
     message.user = {};
     message.channel.id = id;
-    message.user.id = 6;
+    message.user.id = id; 
+
+     /* 
+    if(this.userService.UserExists(message.username) == true){
+      this.userService.getUserByName(username)
+      return this.userService.getUser(data => this.user = data)
+    }*/
+
     this.httpClient.post(url, message, options).subscribe(response => this._message.next(response))
-
-    console.log(message)
-
-
-
-
 
     /*
     if (HttpStatusCode.Created) {
@@ -70,8 +73,9 @@ export class MessageService {
 
       this.result = 1; 
   */
-
+    console.log(message)
   }
+  
 }
 
 

@@ -17,16 +17,16 @@ export class AddComponent implements OnInit {
     public id?: number;
 
     public messageForm = new FormGroup({
-    //   username: new FormControl('',[
-    //   Validators.required,
-    //   Validators.minLength(4),
-    // ]) ,
+      username: new FormControl('',[
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(30),
+    ]) ,
       content: new FormControl('' ,[
       Validators.required,
-      Validators.minLength(4)
+      Validators.minLength(1)
       ]),
-     datetime: new FormControl(new Date),
-     username: new FormControl()
+     datetime: new FormControl(new Date)
   });
 
   onSubmit() {
