@@ -4,7 +4,9 @@
 
 <ul *ngIf="channels.length; else noChannelMessage">
     <li *ngFor="let channel of channels; let i = index">
-        <a [routerLink]="['/channels', channel.id]">{{ channel.name }}</a>
+        <a [routerLink]="['/channels', channel.id]">{{ channel.name }}</a> ---- 
+        <a [routerLink]="['/channels', channel.id, 'edit']">Modifier</a> ----
+        <a [routerLink]="['/channels', channel.id, 'delete']">Supprimer</a>
     </li>
 </ul>
 

@@ -34,4 +34,7 @@ export class ListComponent implements OnInit{
     this.channelService.channels.subscribe(data => this.channels = data);
   }
 
+
+  
+
 }
