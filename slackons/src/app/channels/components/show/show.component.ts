@@ -26,5 +26,9 @@ export class ShowComponent implements OnInit {
 
   }
 
- 
+
+  display = false;
+  onPress(){
+    this.display = !this.display;
+  }
 }
