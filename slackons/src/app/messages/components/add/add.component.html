@@ -3,17 +3,17 @@
     <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
         
         <label for="username">Username: </label>
-        <input id="username" type="text"  formControlName="username">
-        <br>
+        <input id="username" name="username" type="text" required minlength="4" formControlName="username">
+        
         <label for="content">Message: </label>
-        <textarea id="content" formControlName="content"></textarea>
-
+        <input id="content" required minlength="1" formControlName="content">
+        <div *ngIf="!messageForm.valid">
+            L'username doit contenir au minimum 4 caractères, au maximum 30.
+            Le contenu ne doit pas être vide !
+        </div>
         <br>
-        <button type="button" (click)="submitMessage()">Poster</button>
+        <button [disabled]="!messageForm.valid" type="button" (click)="submitMessage()">Poster</button>
     </form>
 </div>
 
-<div class="alert alert-danger" *ngIf="messageForm.errors?.['minlength']">
-    L'username doit contenir au minimum 4 caractères, au maximum 30.
-    Le contenu ne doit pas être vide!
-</div>
+ 
