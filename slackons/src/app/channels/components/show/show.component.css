@@ -5,10 +5,10 @@
     border-top: 1px solid #ccc
 }
 
-
-
-
-
+.channeloptions{
+  font-size: 15px;
+  padding-left: 65px;
+}
 
 .usersnavbar {
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -33,3 +33,4 @@
     /*display: block;*/
     display: flex;
   }
+

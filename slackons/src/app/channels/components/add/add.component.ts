@@ -21,7 +21,7 @@ export class AddComponent {
     private router: Router
   ){}
 
-  public submitBook(): void
+  public submitChannel(): void
   {
     this.channelService.createChannel(url, this.form.value);
     this.router.navigate(['/channels']);
