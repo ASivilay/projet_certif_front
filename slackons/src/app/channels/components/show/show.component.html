@@ -6,7 +6,11 @@
     <body>
         <section class="channelcontent">
             <h2>#{{ channel?.name }}</h2> 
+            <app-delete></app-delete>
             
+            <button (click)="onPress()">Modifier le canal</button>
+            <div class="test" *ngIf="display"><app-edit></app-edit></div>
+
             <br/>
             <ul *ngIf="channel.messages.length; else noChannelMessage">
                 <blockquote *ngFor="let message of channel.messages; let i = index">
@@ -34,8 +38,10 @@
             <ng-template #noChannelUser>
                 <div>Aucun utilisateur sur ce canal</div>
             </ng-template>
-        </section>
-
+        </section>  -->
+        <div class="channelsnavbar">     
+            <app-list-channels></app-list-channels>
+        </div>
 
          -->
 
