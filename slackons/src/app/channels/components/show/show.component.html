@@ -10,7 +10,7 @@
             
             <button (click)="onPress()">Modifier le canal</button>
             <div class="test" *ngIf="display"><app-edit></app-edit></div>
-
+            <hr>
             <br/>
             <ul *ngIf="channel.messages.length; else noChannelMessage">
                 <blockquote *ngFor="let message of channel.messages; let i = index">
