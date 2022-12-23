@@ -5,19 +5,24 @@
     </head>
     <body>
         <section class="channelcontent">
-            <h2>#{{ channel?.name }}</h2> 
-            <app-delete></app-delete>
+
             
-            <button (click)="onPress()">Modifier le canal</button>
-            <div class="test" *ngIf="display"><app-edit></app-edit></div>
-            <hr>
-            <br/>
+                <h2>#{{ channel?.name }} 
+                    <span class="channeloptions">
+                        <button (click)="onPressModif()">Modifier le canal</button>
+                        <div class="test" *ngIf="display"><app-edit></app-edit></div>
+
+                        <button (click)="onPressSupp()">Supprimer le canal</button>
+                        <div class="test" *ngIf="displaySupp"><app-delete></app-delete></div>
+                    </span>            
+            </h2>
+            
             <ul *ngIf="channel.messages.length; else noChannelMessage">
                 <blockquote *ngFor="let message of channel.messages; let i = index">
-                    <div class="username">{{ message.username}}</div>
-                    <div class="messagedate">à {{ message.datetime | date :'HH:mm' }} le {{ message.datetime | date : 'd MMM YYYY' }}</div>
+                    <span class="username">{{ message.username}}</span>
+                    <span class="messagedate"> à {{ message.datetime | date :'HH:mm' }} le {{ message.datetime | date : 'd MMM YYYY' }}</span>
                     <!--<code>{{ message.content}}</code>-->
-                    {{ message.content }}
+                   <div class="messagecontent">{{ message.content }}</div> 
                     <!--<p class="messagecontent">{{ message.content }} </p>-->                        
                 </blockquote>
             </ul>
@@ -25,7 +30,7 @@
                 <div>Aucun message sur ce canal</div>
             </ng-template>
         </section>
-        <br/>
+        
 
 
         <!-- <section class="usersnavbar">
@@ -39,15 +44,13 @@
                 <div>Aucun utilisateur sur ce canal</div>
             </ng-template>
         </section>  -->
-        <div class="channelsnavbar">     
-            <app-list-channels></app-list-channels>
-        </div>
 
-        <section class="addmessage">
-             <app-add-message></app-add-message>
-        </section>
+         <section class="addmessage">
+            <app-add-message></app-add-message>
+       </section>
+
+       </body>
         
-    </body>
 </html>
 
 
