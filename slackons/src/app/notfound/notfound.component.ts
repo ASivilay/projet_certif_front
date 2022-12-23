@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class NotfoundComponent {
 
+  constructor(
+    private httpClient: HttpClient
+  ) {}
+  
+  public notfound(url: string, id: number|undefined): void 
+
+  
+  {
+    url = `${url}?id=${id}`;
+
+  }
+
+  
 }
