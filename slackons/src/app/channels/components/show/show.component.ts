@@ -1,5 +1,5 @@
 import { Component, OnInit,  } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ChannelService } from '../../services/channels.services.service';
 
 const url = "http://localhost:8080/api/canalgeneral/listecanaux/trouver";
@@ -16,7 +16,7 @@ export class ShowComponent implements OnInit {
 
   constructor(
     private channelService : ChannelService,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
   ){}
 
   ngOnInit(): void {
@@ -26,9 +26,13 @@ export class ShowComponent implements OnInit {
 
   }
 
-
   display = false;
-  onPress(){
+  onPressModif(){
     this.display = !this.display;
+  }
+
+  displaySupp = false;
+  onPressSupp(){
+    this.displaySupp = !this.displaySupp;
   }
 }
